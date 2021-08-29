@@ -1,0 +1,12 @@
+version: '3'
+services:
+  todo:
+    build: .
+    volumes:
+      - ./:/app
+      - $GOPATH/pkg/mod/cache:/go/pkg/mod/cache
+    working_dir: /app
+    env_file:
+      - .env
+    ports:
+      - 4300:4300
